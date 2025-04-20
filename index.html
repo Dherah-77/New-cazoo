@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="style.css" />
+    <link href="./Images/logo2.jpeg" rel="icon" />
+    <title>Lexi-Autos</title>
+  </head>
+  <body>
+    <header class="bg-blue-600 h-auto w-full sticky top-0">
+      <section class="hdf flex justify-between items-center p-2">
+        <img
+          class="h-15 cursor-pointer"
+          src="./Images/logo.png"
+          alt="Logo-Image"
+        />
+        <ul class="p-2 gap-4 md:flex hidden">
+          <li>About</li>
+          <li>Products</li>
+          <li>Contact us</li>
+        </ul>
+        <ul
+          class="smallnav w-full p-2 gap-4 hidden absolute top-18 left-0 bg-blue-600 flex flex-col text-center"
+        >
+          <li>About</li>
+          <li>Products</li>
+          <li>Contact us</li>
+        </ul>
+        <img
+          class="h-13 md:hidden cursor-pointer"
+          src="./Images/menu.png"
+          alt="Menu-bar"
+        />
+      </section>
+    </header>
+    <main class="min-h-screen">
+      <section class="w-full h-auto flex flex-col md:flex-row">
+        <section class="md:w-1/2">
+          <h1 class="text-6xl font-bold text-center p-2 mt-4">
+            <span class="text-blue-700">Lexi-Autos</span> International, Luxury
+            Makes <span class="text-red-500">Believe</span>
+          </h1>
+        </section>
+        <section
+          class="md:w-100 md:rounded-2xl h-auto mt-4 p-2 md:grid md:grid-cols-2 flex bg-gray-200 justify-evenly gap-2"
+        >
+          <img
+            class="md:h-30 w-30 rounded-2xl"
+            src="./Images/Benzlogo.jpeg"
+            alt="Benzlogo"
+          />
+          <img
+            class="h-30 w-30 rounded-2xl"
+            src="./Images/Toyota-logo.jpeg"
+            alt="Toyota-logo"
+          />
+          <img
+            class="h-30 w-30 rounded-2xl"
+            src="./Images/Lexuxlogo.jpeg"
+            alt="Lexus-logo"
+          />
+          <img
+            class="md:block hidden h-60 w-40 rounded-2xl"
+            src="./Images/Car19.jpeg"
+            alt="Lexus-logo"
+          />
+        </section>
+      </section>
+    </main>
+  </body>
+</html>
