@@ -1,3 +1,22 @@
 .smallnav li {
     border-top: solid 1px black;
 }
+
+/* .scoller1 {
+    display: grid;
+    gap: 0.3em;
+    grid-auto-flow:column;
+    grid-auto-columns: 21%;
+    overflow-x:auto;
+    overscroll-behavior-inline: contain;
+} */
+
+.scoller1 {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto; 
+}
+
+.scoller1 img {
+    height: 120px;
+}
