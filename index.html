@@ -13,8 +13,8 @@
     <title>Lexi-Autos</title>
     <script src="script.js" defer></script>
   </head>
-  <body>
-    <header class="w-full h-auto sticky top-3 rounded-xl bg-blue-400">
+  <body class="bg-stone-500 text-white">
+    <header class="w-full h-auto sticky top-2 rounded-3xl bg-orange-400">
       <section class="flex justify-between p-2">
         <section>
           <img src="./Images/logo.png" alt="Logo-image" class="h-18" />
@@ -25,27 +25,41 @@
           <li>Contct Us</li>
         </ul>
         <ul
-          class="smallnav hidden absolute top-22 left-0 border w-full h-30 bg-blue-400 text-center flex flex-col justify-evenly"
+          class="smallnav hidden absolute top-22 left-0 border w-full h-30 bg-orange-400 text-center flex flex-col justify-evenly"
         >
           <li>Our Products</li>
           <li>About Us</li>
           <li>Contct Us</li>
         </ul>
         <section>
-          <img src="./Images/menu.png" alt="Menu-Icon" class="h-10 md:hidden" />
+          <img
+            src="./Images/menu.png"
+            alt="Menu-Icon"
+            class="h-10 md:hidden mt-4"
+          />
         </section>
       </section>
     </header>
     <main>
-      <section class="h-screen">
-        <div>
-          <h1>
-            <span class="text-blue-400">Lexi-Auto's</span> International Luxury
-            makes <span class="text-red-400">Believe</span>
+      <section class="h-screen flex flex-col md:flex-row text-center">
+        <div class="md:mt-10 md:w-4/9 p-4">
+          <h1 class="text-xl">
+            <span class="text-orange-400 font-bold text-5xl italic"
+              >Lexi-Auto's</span
+            >
+            International Luxury makes
+            <span class="text-red-400 font-bold text-5xl italic">Believe.</span
+            >Looking to buy luxury, fuel sustainable, or power on the road. I
+            offer the best deals at an unbeatable price.
           </h1>
         </div>
         <div>
           <img src="./Images.2/Orange-removebg-preview.png" alt="Car-Image" />
+        </div>
+      </section>
+      <section class="w-full">
+        <div>
+          <h1 class="text-center">We Make Sure Every Ride is Comfortable</h1>
         </div>
       </section>
     </main>
