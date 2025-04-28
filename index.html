@@ -59,11 +59,11 @@
       <!-- Mobile Navigation (hidden by default) -->
       <ul
         id="mobile-menu"
-        class="hidden flex-col bg-[#FB6542] w-full text-center p-4 md:hidden"
+        class="hidden flex-col bg-[#FB6542] w-full text-center p-4 md:hidden border border-white"
       >
         <li class="py-2 border-b border-white">Our Products</li>
         <li class="py-2 border-b border-white">About Us</li>
-        <li class="py-2">Contact Us</li>
+        <a href="#Contact"><li class="py-2">Contacts Us</li></a>
       </ul>
     </header>
 
@@ -93,39 +93,6 @@
           />
         </div>
       </section>
-
-      <!-- Zoom Animation Style -->
-      <style>
-        @keyframes zoomInOut {
-          0%,
-          100% {
-            transform: scale(1);
-          }
-          50% {
-            transform: scale(1.15);
-          }
-        }
-        .animate-zoom {
-          animation: zoomInOut 4s infinite ease-in-out;
-        }
-      </style>
-
-      <!-- JavaScript to Change Car Images -->
-      <script>
-        const carImages = [
-          "./Images.2/Orange-removebg-preview.png",
-          "./Images.2/car29-removebg-preview.png",
-          "./Images.2/car15-removebg-preview.png",
-          "./Images.2/car25-removebg-preview.png",
-        ];
-        let currentIndex = 0;
-        const carImageElement = document.getElementById("carImage");
-
-        setInterval(() => {
-          currentIndex = (currentIndex + 1) % carImages.length;
-          carImageElement.src = carImages[currentIndex];
-        }, 4000); // Change every 4 seconds
-      </script>
 
       <!-- SLOGAN Section with Full Black Blurry Overlay and Bouncing Car Circles -->
       <section
@@ -193,7 +160,7 @@
           WHAT WE HAVE TO OFFER...
         </h1>
         <div
-          class="max-w-7xl mx-auto px-4 grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4"
+          class="max-w-7xl mx-auto px-4 grid gap-8 grid-cols-2 sm:grid-cols-2 lg:grid-cols-4"
         >
           <!-- Service 1: Sell Cars -->
           <figure
@@ -262,41 +229,7 @@
       </button>
     </main>
 
-    <!-- JS Scroll Behavior -->
-    <script>
-      const navbar = document.getElementById("navbar");
-      let lastScrollTop = 0;
-      window.addEventListener("scroll", function () {
-        let scrollTop =
-          window.pageYOffset || document.documentElement.scrollTop;
-        if (scrollTop > lastScrollTop) {
-          navbar.style.transform = "translateY(-100%)"; // scroll down -> hide navbar
-        } else {
-          navbar.style.transform = "translateY(0)"; // scroll up -> show navbar
-        }
-        lastScrollTop = scrollTop;
-      });
-
-      // Mobile Menu Toggle
-      const menuBtn = document.getElementById("menu-btn");
-      const mobileMenu = document.getElementById("mobile-menu");
-      menuBtn.addEventListener("click", () => {
-        mobileMenu.classList.toggle("hidden");
-      });
-
-      // Back to Top Button
-      const backToTop = document.getElementById("backToTop");
-      window.addEventListener("scroll", () => {
-        if (window.scrollY > 300) {
-          backToTop.classList.remove("hidden");
-        } else {
-          backToTop.classList.add("hidden");
-        }
-      });
-      backToTop.addEventListener("click", () => {
-        window.scrollTo({ top: 0, behavior: "smooth" });
-      });
-    </script>
+    <script></script>
 
     <!-- FOOTER -->
     <footer class="bg-[#1a1a1a] text-gray-300 py-12 mt-16">

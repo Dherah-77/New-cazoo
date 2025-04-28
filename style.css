@@ -40,3 +40,16 @@ html {
 .animate-bounce-slow-reverse {
   animation: bounce-slow-reverse 4s ease-in-out infinite;
 }
+
+@keyframes zoomInOut {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.15);
+  }
+}
+.animate-zoom {
+  animation: zoomInOut 4s infinite ease-in-out;
+}
