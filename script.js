@@ -30,9 +30,19 @@ const carImages = [
 
       // Mobile Menu Toggle
       const menuBtn = document.getElementById("menu-btn");
+      const closeBtn = document.getElementById("menu-cls");
       const mobileMenu = document.getElementById("mobile-menu");
+    
       menuBtn.addEventListener("click", () => {
-        mobileMenu.classList.toggle("hidden");
+        mobileMenu.classList.remove("hidden");
+        menuBtn.classList.add("hidden");
+        closeBtn.classList.remove("hidden");
+      });
+    
+      closeBtn.addEventListener("click", () => {
+        mobileMenu.classList.add("hidden");
+        menuBtn.classList.remove("hidden");
+        closeBtn.classList.add("hidden");
       });
 
       // Back to Top Button
