@@ -9,3 +9,34 @@
 .tht {
     background-color: hsla(39, 100%, 50%, 0.612);
 }
+
+html {
+  scroll-behavior: smooth;
+}
+@keyframes bounce-slow {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-30px);
+  }
+}
+
+@keyframes bounce-slow-reverse {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(30px);
+  }
+}
+
+.animate-bounce-slow {
+  animation: bounce-slow 4s ease-in-out infinite;
+}
+
+.animate-bounce-slow-reverse {
+  animation: bounce-slow-reverse 4s ease-in-out infinite;
+}

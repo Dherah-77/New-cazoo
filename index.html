@@ -3,111 +3,402 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- Tailwind CSS CDN (fixed to proper version, no browser plugin) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- External CSS -->
     <link rel="stylesheet" href="style.css" />
-    <link href="./Images/logo2.jpeg" rel="icon" />
+
+    <!-- Favicon (fixed rel attribute) -->
+    <link rel="icon" href="./Images/ftlogo.jpeg" type="image/jpeg" />
+
+    <!-- FontAwesome Icons -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     />
-    <title>Lexi-Autos</title>
+
+    <title>Lexi-Autos | Luxury Car Deals</title>
+
+    <!-- Script for navbar scroll behavior and back-to-top button -->
     <script src="script.js" defer></script>
+
+    <!-- Smooth scroll behavior -->
   </head>
-  <body class="bg-stone-500 text-white">
-    <header class="w-full h-auto sticky top-2 rounded-3xl bg-orange-400">
-      <section class="flex justify-between p-2">
-        <section>
-          <img src="./Images/logo.png" alt="Logo-image" class="h-18" />
-        </section>
-        <ul class="flex gap-4 hidden md:flex">
-          <li>Our Products</li>
-          <li>About Us</li>
-          <li>Contct Us</li>
+
+  <body class="bg-[#375E97] text-white font-sans">
+    <!-- HEADER with scroll behavior -->
+    <header
+      id="navbar"
+      class="fixed w-full z-50 bg-[#FB6542] transition-transform duration-500"
+    >
+      <section class="flex justify-between items-center p-4 max-w-7xl mx-auto">
+        <!-- Logo -->
+        <div>
+          <img src="./Images/logo.png" alt="Lexi-Autos Logo" class="h-16" />
+        </div>
+
+        <!-- Desktop Navigation -->
+        <ul class="hidden md:flex gap-8 font-semibold text-lg">
+          <li class="hover:text-[#FB6542] cursor-pointer">Our Products</li>
+          <li class="hover:text-[#FB6542] cursor-pointer">About Us</li>
+          <li class="hover:text-[#FB6542] cursor-pointer">Contact Us</li>
         </ul>
-        <ul
-          class="smallnav hidden absolute top-22 left-0 border w-full h-30 bg-orange-400 text-center flex flex-col justify-evenly"
-        >
-          <li>Our Products</li>
-          <li>About Us</li>
-          <li>Contct Us</li>
-        </ul>
-        <section>
-          <img
-            src="./Images/menu.png"
-            alt="Menu-Icon"
-            class="h-10 md:hidden mt-4"
-          />
-        </section>
+
+        <!-- Mobile Menu Icon -->
+        <div class="md:hidden">
+          <button id="menu-btn">
+            <i class="fas fa-bars fa-2x"></i>
+          </button>
+        </div>
       </section>
+
+      <!-- Mobile Navigation (hidden by default) -->
+      <ul
+        id="mobile-menu"
+        class="hidden flex-col bg-[#FB6542] w-full text-center p-4 md:hidden"
+      >
+        <li class="py-2 border-b border-white">Our Products</li>
+        <li class="py-2 border-b border-white">About Us</li>
+        <li class="py-2">Contact Us</li>
+      </ul>
     </header>
-    <main>
-      <section class="h-screen flex flex-col md:flex-row text-center">
-        <div class="md:mt-10 md:w-4/9 p-4">
-          <h1 class="text-xl">
-            <span class="text-orange-400 font-bold text-5xl italic"
-              >Lexi-Auto's</span
-            >
-            International Luxury makes
-            <span class="text-red-400 font-bold text-5xl italic">Believe.</span
-            >Looking to buy luxury, fuel sustainable, or power on the road. I
-            offer the best deals at an unbeatable price.
+
+    <!-- MAIN CONTENT -->
+    <main class="pt-32">
+      <section
+        class="h-screen flex flex-col md:flex-row items-center text-center px-6 max-w-7xl mx-auto"
+      >
+        <div class="md:w-1/2 mb-10 md:mb-0">
+          <h1 class="text-4xl md:text-5xl font-extrabold leading-tight mb-6">
+            <span class="text-[#FFBB00] italic">Lexi-Auto's</span>
+            International Luxury Makes
+            <span class="text-[#FFBB00] italic">Believe.</span>
           </h1>
+          <p class="text-lg leading-relaxed">
+            Looking to buy luxury, fuel sustainable, or power on the road? We
+            offer the best deals at unbeatable prices.
+          </p>
         </div>
-        <div class="flex justify-center items-center h-auto">
+
+        <div class="md:w-1/2 flex justify-center">
           <img
-            class="h-70 md:h-auto"
+            id="carImage"
+            class="w-80 md:w-[400px] animate-zoom"
             src="./Images.2/Orange-removebg-preview.png"
-            alt="Car-Image"
+            alt="Luxury Car"
           />
         </div>
       </section>
+
+      <!-- Zoom Animation Style -->
+      <style>
+        @keyframes zoomInOut {
+          0%,
+          100% {
+            transform: scale(1);
+          }
+          50% {
+            transform: scale(1.15);
+          }
+        }
+        .animate-zoom {
+          animation: zoomInOut 4s infinite ease-in-out;
+        }
+      </style>
+
+      <!-- JavaScript to Change Car Images -->
+      <script>
+        const carImages = [
+          "./Images.2/Orange-removebg-preview.png",
+          "./Images.2/car29-removebg-preview.png",
+          "./Images.2/car15-removebg-preview.png",
+          "./Images.2/car25-removebg-preview.png",
+        ];
+        let currentIndex = 0;
+        const carImageElement = document.getElementById("carImage");
+
+        setInterval(() => {
+          currentIndex = (currentIndex + 1) % carImages.length;
+          carImageElement.src = carImages[currentIndex];
+        }, 4000); // Change every 4 seconds
+      </script>
+
+      <!-- SLOGAN Section with Full Black Blurry Overlay and Bouncing Car Circles -->
       <section
-        class="w-full h-50 bg-[url(./Images.2/car11.jpg)] bg-center bg-cover"
+        class="relative w-full min-h-[60vh] md:min-h-[70vh] bg-cover bg-center flex items-center justify-center overflow-hidden"
+        style="background-image: url('./Images.2/car11.jpg')"
       >
-        <div class="">
-          <h1
-            class="tht h-50 text-center md:text-center text-5xl flex items-center italic"
+        <!-- Full black blur overlay -->
+        <div class="absolute inset-0 bg-black/50 backdrop-blur-sm"></div>
+
+        <!-- Animated Circles Container -->
+        <div class="absolute w-full h-full flex justify-center items-center">
+          <!-- No more rotation, now bouncing -->
+          <div class="relative w-full h-full">
+            <!-- Circle 1 -->
+            <div class="absolute top-10 left-1/4 animate-bounce-slow">
+              <img
+                src="./Images.2/car9.jpg"
+                alt="Car 1"
+                class="w-24 h-24 rounded-full object-cover border-4 border-white shadow-xl"
+              />
+            </div>
+
+            <!-- Circle 2 -->
+            <div class="absolute top-1/2 right-10 animate-bounce-slow-reverse">
+              <img
+                src="./Images.2/car4.jpg"
+                alt="Car 2"
+                class="w-24 h-24 rounded-full object-cover border-4 border-white shadow-xl"
+              />
+            </div>
+
+            <!-- Circle 3 -->
+            <div class="absolute bottom-10 left-1/3 animate-bounce-slow">
+              <img
+                src="./Images.2/car10.jpg"
+                alt="Car 3"
+                class="w-24 h-24 rounded-full object-cover border-4 border-white shadow-xl"
+              />
+            </div>
+
+            <!-- Circle 4 -->
+            <div
+              class="absolute bottom-1/4 left-10 animate-bounce-slow-reverse"
+            >
+              <img
+                src="./Images.2/car21.jpg"
+                alt="Car 4"
+                class="w-24 h-24 rounded-full object-cover border-4 border-white shadow-xl"
+              />
+            </div>
+          </div>
+        </div>
+
+        <!-- Centered Text stays above everything -->
+        <h2
+          class="relative z-10 text-2xl md:text-5xl italic text-white font-bold px-6 py-4 rounded-xl text-center"
+        >
+          We Make Sure Every Ride is Comfortable
+        </h2>
+      </section>
+
+      <!-- SERVICES Section -->
+      <section class="py-16 bg-white text-black">
+        <h1 class="text-center font-bold mb-5 text-2xl text-[#FB6542]">
+          WHAT WE HAVE TO OFFER...
+        </h1>
+        <div
+          class="max-w-7xl mx-auto px-4 grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4"
+        >
+          <!-- Service 1: Sell Cars -->
+          <figure
+            class="bg-gray-100 rounded-2xl p-6 shadow-lg hover:scale-105 transition-transform"
           >
-            We Make Sure Every Ride is Comfortable
-          </h1>
+            <img
+              src="./Images.2/car27-removebg-preview.png"
+              alt="We Sell Cars"
+              class="w-full h-48 object-cover rounded-md mb-4"
+            />
+            <figcaption class="text-center text-lg font-semibold">
+              We Sell Cars
+            </figcaption>
+          </figure>
+
+          <!-- Service 2: Rent Cars -->
+          <figure
+            class="bg-gray-100 rounded-2xl p-6 shadow-lg hover:scale-105 transition-transform"
+          >
+            <img
+              src="./Images.2/car16-removebg-preview.png"
+              alt="We Rent Cars"
+              class="w-full h-48 object-cover rounded-md mb-4"
+            />
+            <figcaption class="text-center text-lg font-semibold">
+              We Rent Cars
+            </figcaption>
+          </figure>
+
+          <!-- Service 3: Swap Cars -->
+          <figure
+            class="bg-gray-100 rounded-2xl p-6 shadow-lg hover:scale-105 transition-transform"
+          >
+            <img
+              src="./Images.2/car11-removebg-preview.png"
+              alt="We Swap Cars"
+              class="w-full h-48 object-cover rounded-md mb-4"
+            />
+            <figcaption class="text-center text-lg font-semibold">
+              We Swap Cars
+            </figcaption>
+          </figure>
+
+          <!-- Service 4: Nationwide Delivery -->
+          <figure
+            class="bg-gray-100 rounded-2xl p-6 shadow-lg hover:scale-105 transition-transform"
+          >
+            <img
+              src="./Images.2/car29-removebg-preview.png"
+              alt="Nationwide Delivery"
+              class="w-full h-48 object-cover rounded-md mb-4"
+            />
+            <figcaption class="text-center text-lg font-semibold">
+              Nationwide Delivery
+            </figcaption>
+          </figure>
         </div>
       </section>
-      <section
-        class="text-center font-bold text-black underline grid grid-cols-2 gap-4"
+
+      <!-- BACK TO TOP BUTTON (hidden initially) -->
+      <button
+        id="backToTop"
+        class="fixed bottom-6 left-6 bg-[#FB6542] text-white p-3 rounded-full shadow-lg hidden hover:bg-[#FB6542] transition"
       >
-        <figure>
-          <img
-            class="w-full h-60 object-cover"
-            src="./Images.2/car15-removebg-preview.png"
-            alt="Car-Image"
-          />
-          <figcaption>We sell Cars</figcaption>
-        </figure>
-        <figure>
-          <img
-            class="w-full h-60 object-cover"
-            src="./Images.2/car16-removebg-preview.png"
-            alt="Car-Image"
-          />
-          <figcaption>We Rent Cars</figcaption>
-        </figure>
-        <figure>
-          <img
-            class="w-full h-60 object-cover"
-            src="./Images.2/car11-removebg-preview.png"
-            alt="Car-Image"
-          />
-          <figcaption>We Swap Cars</figcaption>
-        </figure>
-        <figure>
-          <img
-            class="w-full h-60 object-cover"
-            src="./Images.2/car29-removebg-preview.png"
-            alt="Car-Image"
-          />
-          <figcaption>We Offer Nation Wide Delivery</figcaption>
-        </figure>
-      </section>
+        <i class="fas fa-arrow-up"></i>
+      </button>
     </main>
+
+    <!-- JS Scroll Behavior -->
+    <script>
+      const navbar = document.getElementById("navbar");
+      let lastScrollTop = 0;
+      window.addEventListener("scroll", function () {
+        let scrollTop =
+          window.pageYOffset || document.documentElement.scrollTop;
+        if (scrollTop > lastScrollTop) {
+          navbar.style.transform = "translateY(-100%)"; // scroll down -> hide navbar
+        } else {
+          navbar.style.transform = "translateY(0)"; // scroll up -> show navbar
+        }
+        lastScrollTop = scrollTop;
+      });
+
+      // Mobile Menu Toggle
+      const menuBtn = document.getElementById("menu-btn");
+      const mobileMenu = document.getElementById("mobile-menu");
+      menuBtn.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+      });
+
+      // Back to Top Button
+      const backToTop = document.getElementById("backToTop");
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 300) {
+          backToTop.classList.remove("hidden");
+        } else {
+          backToTop.classList.add("hidden");
+        }
+      });
+      backToTop.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+    </script>
+
+    <!-- FOOTER -->
+    <footer class="bg-[#1a1a1a] text-gray-300 py-12 mt-16">
+      <div
+        class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-10"
+      >
+        <!-- Logo and About -->
+        <div>
+          <img
+            src="./Images/ftlogo.jpeg"
+            alt="Lexi-Autos Logo"
+            class="h-16 mb-4"
+          />
+          <p class="text-gray-400 leading-relaxed">
+            At Lexi-Autos, we don't just sell cars — we deliver dreams on
+            wheels. Drive luxury, drive power, drive with confidence.
+          </p>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+          <h3 class="text-xl font-semibold text-[#FB6542] mb-4">Quick Links</h3>
+          <ul class="space-y-2">
+            <li>
+              <a href="#" class="hover:text-[#FB6542] transition"
+                >Our Products</a
+              >
+            </li>
+            <li>
+              <a href="#" class="hover:text-[#FB6542] transition">About Us</a>
+            </li>
+            <li>
+              <a href="#" class="hover:text-[#FB6542] transition">Contact Us</a>
+            </li>
+            <li>
+              <a href="#" class="hover:text-[#FB6542] transition">FAQs</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Contact & Socials -->
+        <div>
+          <h3 class="text-xl font-semibold text-[#FB6542] mb-4">Contact Us</h3>
+          <h3 class="text-lg font-semibold mb-4">Address:</h3>
+          <address class="not-italic leading-relaxed">
+            📍 KM6 Benin Sapele<br />
+            Sapele Road, Benin<br />
+            Edo State, Nigeria<br />
+          </address>
+          <p class="mb-2">
+            <i class="fas fa-phone mr-2 text-[#FB6542]"></i> +234 805 552 6350
+          </p>
+          <p class="mb-2">
+            <i class="fas fa-phone mr-2 text-[#FB6542]"></i> +234 803 606 1522
+          </p>
+          <p class="mb-4">
+            <i class="fas fa-envelope mr-2 text-[#FB6542]"></i>
+            <a href="mailto:Alexchima65@gmail.com" class="hover:underline">
+              Alexchima65@gmail.com
+            </a>
+          </p>
+          <p class="mb-4">
+            <i class="fas fa-envelope mr-2 text-[#FB6542]"></i>
+            <a href="mailto:Alexchima65@hotmail.com" class="hover:underline">
+              Alexchima65@hotmail.com
+            </a>
+          </p>
+
+          <div class="flex space-x-4 mt-4">
+            <a
+              href="https://www.facebook.com/alexchima65"
+              target="_blank"
+              class="text-gray-300 hover:text-[#FB6542] transition text-2xl"
+              ><i class="fab fa-facebook"></i
+            ></a>
+            <a
+              href="https://www.instagram.com/alexchima65"
+              target="_blank"
+              class="text-gray-300 hover:text-[#FB6542] transition text-2xl"
+              ><i class="fab fa-instagram"></i
+            ></a>
+            <a
+              href="https://twitter.com/alexchima65"
+              target="blank"
+              class="text-gray-300 hover:text-[#FB6542] transition text-2xl"
+              ><i class="fa-brands fa-x-twitter"></i
+            ></a>
+            <a
+              href="#"
+              href="https://wa.me/+2348055526350"
+              target="_blank"
+              class="text-gray-300 hover:text-[#FB6542] transition text-2xl"
+              ><i class="fa-brands fa-whatsapp"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Bar -->
+      <div
+        class="border-t border-gray-700 mt-10 pt-6 text-center text-sm text-gray-500"
+      >
+        &copy; 2025 Lexi-Autos. All rights reserved.
+      </div>
+    </footer>
   </body>
 </html>
