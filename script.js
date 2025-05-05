@@ -45,6 +45,23 @@ const carImages = [
         closeBtn.classList.add("hidden");
       });
 
+      // About Us Section
+      const abtBtn = document.getElementById("abtbtn");
+      const abtsctn = document.getElementById("Aboutus");
+      const abttxt = document.getElementById("abt-txt");
+      const clsAbt = document.getElementById("abt-cls");
+
+      abtBtn.addEventListener("click",() => {
+        mobileMenu.classList.add("hidden");
+        abtsctn.classList.remove("hidden");
+        abttxt.classList.remove("hidden");
+      });
+      
+      clsAbt.addEventListener("click",() => {
+        abtsctn.classList.add("hidden");
+        abttxt.classList.add("hidden");
+      });
+
       // Back to Top Button
       const backToTop = document.getElementById("backToTop");
       window.addEventListener("scroll", () => {

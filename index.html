@@ -42,7 +42,9 @@
         <!-- Desktop Navigation -->
         <ul class="hidden md:flex gap-8 font-semibold text-lg">
           <li class="hover:text-black cursor-pointer">Our Products</li>
-          <li class="hover:text-black cursor-pointer">About Us</li>
+          <a href="#Aboutus" id="abtbtn">
+            <li class="hover:text-black cursor-pointer">About Us</li>
+          </a>
           <a href="#Contact"
             ><li class="hover:text-black cursor-pointer">Contacts Us</li></a
           >
@@ -66,8 +68,16 @@
         id="mobile-menu"
         class="hidden flex-col bg-[#FB6542] w-full text-center p-4 md:hidden border border-white"
       >
-        <li class="py-2 border-b border-white cursor-pointer">Our Products</li>
-        <li class="py-2 border-b border-white cursor-pointer">About Us</li>
+        <a href=""
+          ><li class="py-2 border-b border-white cursor-pointer">
+            Our Products
+          </li></a
+        >
+        <a href="#Aboutus" id="abtbtn"
+          ><li class="py-2 border-b border-white cursor-pointer">
+            About Us
+          </li></a
+        >
         <a href="#Contact"><li class="py-2">Contacts Us</li></a>
       </ul>
     </header>
@@ -162,19 +172,18 @@
       <!-- SERVICES Section -->
       <section class="py-16 bg-white text-black">
         <div
-          class="w-1/4 h-auto mx-auto rounded-xl bg-[#FB6542] text-white flex justify-center p-2"
+          id="Aboutus"
+          class="w-1/4 h-auto mx-auto rounded-xl bg-[#FB6542] text-white flex justify-center p-2 gap-2 hidden"
         >
           <!--ABOUT SECTION-->
           <h1 class="text-center font-bold text-2xl">About Us</h1>
-          <button class="opn-abt">
-            <i class="fas fa-arrow-down p-2 cursor-pointer"></i>
-          </button>
-          <button id="abt-cls" class="hidden cls-abt">
+          <button id="abt-cls" class="cls-abt h-6">
             <i class="fas fa-xmark fa-2x"></i>
           </button>
         </div>
         <div
-          class="w-3/4 p-4 rounded-2xl shadow-lg h-auto bg-gray-100 mx-auto text-center md:text-2xl italic abt"
+          id="abt-txt"
+          class="w-3/4 hidden p-4 rounded-2xl shadow-lg h-auto bg-gray-100 mx-auto text-center md:text-2xl italic abt"
         >
           <p>
             At <span class="font-bold text-[#375E97]">Lexi-Autos</span>, we
