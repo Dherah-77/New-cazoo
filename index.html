@@ -66,8 +66,8 @@
         id="mobile-menu"
         class="hidden flex-col bg-[#FB6542] w-full text-center p-4 md:hidden border border-white"
       >
-        <li class="py-2 border-b border-white">Our Products</li>
-        <li class="py-2 border-b border-white">About Us</li>
+        <li class="py-2 border-b border-white cursor-pointer">Our Products</li>
+        <li class="py-2 border-b border-white cursor-pointer">About Us</li>
         <a href="#Contact"><li class="py-2">Contacts Us</li></a>
       </ul>
     </header>
@@ -161,7 +161,34 @@
 
       <!-- SERVICES Section -->
       <section class="py-16 bg-white text-black">
-        <h1 class="text-center font-bold mb-5 text-2xl text-[#FB6542]">
+        <div
+          class="w-1/4 h-auto mx-auto rounded-xl bg-[#FB6542] text-white flex justify-center p-2"
+        >
+          <!--ABOUT SECTION-->
+          <h1 class="text-center font-bold text-2xl">About Us</h1>
+          <button class="opn-abt">
+            <i class="fas fa-arrow-down p-2 cursor-pointer"></i>
+          </button>
+          <button id="abt-cls" class="hidden cls-abt">
+            <i class="fas fa-xmark fa-2x"></i>
+          </button>
+        </div>
+        <div
+          class="w-3/4 p-4 rounded-2xl shadow-lg h-auto bg-gray-100 mx-auto text-center md:text-2xl italic abt"
+        >
+          <p>
+            At <span class="font-bold text-[#375E97]">Lexi-Autos</span>, we
+            specialize in selling, renting, and swapping premium cars with
+            nationwide delivery. Our mission is to provide
+            <span class="font-bold text-[#375E97]">luxury</span> and
+            <span class="font-bold text-[#375E97]">reliable</span>
+            mobility at competitive prices. Whether you're buying your first car
+            or upgrading your ride, we’re committed to giving you a smooth,
+            <span class="font-bold text-[#375E97]">professional</span>
+            experience from start to finish.
+          </p>
+        </div>
+        <h1 class="text-center font-bold mb-5 text-2xl text-[#FB6542] mt-6">
           WHAT WE HAVE TO OFFER...
         </h1>
         <div
@@ -267,7 +294,9 @@
               <a href="#" class="hover:text-[#FB6542] transition">About Us</a>
             </li>
             <li>
-              <a href="#" class="hover:text-[#FB6542] transition">Contact Us</a>
+              <a href="#Contact" class="hover:text-[#FB6542] transition"
+                >Contact Us</a
+              >
             </li>
             <li>
               <a href="#" class="hover:text-[#FB6542] transition">FAQs</a>

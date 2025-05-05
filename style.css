@@ -1,15 +1,3 @@
-.smallnav li {
-    border-top: solid 1px black;
-}
-
-.smallnav li:first-child {
-    border-top:none;
-}
-
-.tht {
-    background-color: hsla(39, 100%, 50%, 0.612);
-}
-
 html {
   scroll-behavior: smooth;
 }
