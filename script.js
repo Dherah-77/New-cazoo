@@ -52,50 +52,51 @@ const carImages = [
       const clsAbt = document.getElementById("abt-cls");
 
         // Only run this on laptop/desktop screens
-      if (
-        window.matchMedia("(min-width: 1024px)").matches && // Tailwind's 'lg' breakpoint
-        window.matchMedia("(hover: hover) and (pointer: fine)").matches // Device supports hover and has a precise pointer
-      ) {
-        let showTimeout, hideTimeout;
-
-        abtBtn.addEventListener("mouseover", () => {
-          clearTimeout(hideTimeout);
-          showTimeout = setTimeout(() => {
-            abtsctn.classList.remove("hidden");
-          }, 400);
-        });
-
-        abtBtn.addEventListener("mouseout", () => {
-          clearTimeout(showTimeout);
-          hideTimeout = setTimeout(() => {
-            abtsctn.classList.add("hidden");
-          }, 400);
-        });
-
-        abtsctn.addEventListener("mouseover", () => {
-          clearTimeout(hideTimeout);
-        });
-
-        abtsctn.addEventListener("mouseout", () => {
-          hideTimeout = setTimeout(() => {
-            abtsctn.classList.add("hidden");
-          }, 400);
-        });
-      }
-
-      abtBtn2.addEventListener("click",() => {
-        mobileMenu.classList.add("hidden");
-        abtsctn.classList.remove("hidden");
-      });
+        document.addEventListener("DOMContentLoaded", () =>{
+          if (
+            window.matchMedia("(min-width: 1024px)").matches
+          ) {
+            let showTimeout, hideTimeout;
+    
+            abtBtn.addEventListener("mouseover", () => {
+              clearTimeout(hideTimeout);
+              showTimeout = setTimeout(() => {
+                abtsctn.classList.remove("hidden");
+              }, 400);
+            });
+    
+            abtBtn.addEventListener("mouseout", () => {
+              clearTimeout(showTimeout);
+              hideTimeout = setTimeout(() => {
+                abtsctn.classList.add("hidden");
+              }, 400);
+            });
+    
+            abtsctn.addEventListener("mouseover", () => {
+              clearTimeout(hideTimeout);
+            });
+    
+            abtsctn.addEventListener("mouseout", () => {
+              hideTimeout = setTimeout(() => {
+                abtsctn.classList.add("hidden");
+              }, 400);
+            });
+          } else {
+            abtBtn2.addEventListener("click",() => {
+              mobileMenu.classList.add("hidden");
+              abtsctn.classList.remove("hidden");
+            });
+            
+            clsAbt.addEventListener("click",() => {
+              abtsctn.classList.add("hidden");
+            });
       
-      clsAbt.addEventListener("click",() => {
-        abtsctn.classList.add("hidden");
-      });
-
-      abtBtn2.addEventListener("click", () => {
-        menuBtn.classList.remove("hidden");
-        closeBtn.classList.add("hidden");
-      });
+            abtBtn2.addEventListener("click", () => {
+              menuBtn.classList.remove("hidden");
+              closeBtn.classList.add("hidden");
+            });
+          }
+        });
 
       // Back to Top Button
       const backToTop = document.getElementById("backToTop");
