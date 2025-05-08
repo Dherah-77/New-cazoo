@@ -48,7 +48,6 @@ const carImages = [
       // About Us Section
       const abtBtn = document.getElementById("abtbtn");
       const abtsctn = document.getElementById("Aboutus");
-      const abttxt = document.getElementById("abt-txt");
       const clsAbt = document.getElementById("abt-cls");
 
       abtBtn.addEventListener("click",() => {
