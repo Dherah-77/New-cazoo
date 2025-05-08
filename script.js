@@ -47,18 +47,56 @@ const carImages = [
 
       // About Us Section
       const abtBtn = document.getElementById("abtbtn");
+      const abtBtn2 = document.getElementById("abt-btn");
       const abtsctn = document.getElementById("Aboutus");
       const clsAbt = document.getElementById("abt-cls");
 
-      abtBtn.addEventListener("click",() => {
+      // Only run this on laptop/desktop screens
+    if (
+      window.matchMedia("(min-width: 1024px)").matches && // Tailwind's 'lg' breakpoint
+      window.matchMedia("(hover: hover) and (pointer: fine)").matches // Device supports hover and has a precise pointer
+    ) {
+      let showTimeout, hideTimeout;
+
+      abtBtn.addEventListener("mouseover", () => {
+        clearTimeout(hideTimeout);
+        showTimeout = setTimeout(() => {
+          abtsctn.classList.remove("hidden");
+        }, 400);
+      });
+
+      abtBtn.addEventListener("mouseout", () => {
+        clearTimeout(showTimeout);
+        hideTimeout = setTimeout(() => {
+          abtsctn.classList.add("hidden");
+        }, 400);
+      });
+
+      abtsctn.addEventListener("mouseover", () => {
+        clearTimeout(hideTimeout);
+      });
+
+      abtsctn.addEventListener("mouseout", () => {
+        hideTimeout = setTimeout(() => {
+          abtsctn.classList.add("hidden");
+        }, 400);
+      });
+    }
+
+
+     
+      abtBtn2.addEventListener("click",() => {
         mobileMenu.classList.add("hidden");
         abtsctn.classList.remove("hidden");
-        abttxt.classList.remove("hidden");
       });
       
       clsAbt.addEventListener("click",() => {
         abtsctn.classList.add("hidden");
-        abttxt.classList.add("hidden");
+      });
+
+      abtsctn.addEventListener("click", () => {
+        menuBtn.classList.remove("hidden");
+        closeBtn.classList.add("hidden");
       });
 
       // Back to Top Button
