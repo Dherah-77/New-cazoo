@@ -51,40 +51,38 @@ const carImages = [
       const abtsctn = document.getElementById("Aboutus");
       const clsAbt = document.getElementById("abt-cls");
 
-      // Only run this on laptop/desktop screens
-    if (
-      window.matchMedia("(min-width: 1024px)").matches && // Tailwind's 'lg' breakpoint
-      window.matchMedia("(hover: hover) and (pointer: fine)").matches // Device supports hover and has a precise pointer
-    ) {
-      let showTimeout, hideTimeout;
+        // Only run this on laptop/desktop screens
+      if (
+        window.matchMedia("(min-width: 1024px)").matches && // Tailwind's 'lg' breakpoint
+        window.matchMedia("(hover: hover) and (pointer: fine)").matches // Device supports hover and has a precise pointer
+      ) {
+        let showTimeout, hideTimeout;
 
-      abtBtn.addEventListener("mouseover", () => {
-        clearTimeout(hideTimeout);
-        showTimeout = setTimeout(() => {
-          abtsctn.classList.remove("hidden");
-        }, 400);
-      });
+        abtBtn.addEventListener("mouseover", () => {
+          clearTimeout(hideTimeout);
+          showTimeout = setTimeout(() => {
+            abtsctn.classList.remove("hidden");
+          }, 400);
+        });
 
-      abtBtn.addEventListener("mouseout", () => {
-        clearTimeout(showTimeout);
-        hideTimeout = setTimeout(() => {
-          abtsctn.classList.add("hidden");
-        }, 400);
-      });
+        abtBtn.addEventListener("mouseout", () => {
+          clearTimeout(showTimeout);
+          hideTimeout = setTimeout(() => {
+            abtsctn.classList.add("hidden");
+          }, 400);
+        });
 
-      abtsctn.addEventListener("mouseover", () => {
-        clearTimeout(hideTimeout);
-      });
+        abtsctn.addEventListener("mouseover", () => {
+          clearTimeout(hideTimeout);
+        });
 
-      abtsctn.addEventListener("mouseout", () => {
-        hideTimeout = setTimeout(() => {
-          abtsctn.classList.add("hidden");
-        }, 400);
-      });
-    }
+        abtsctn.addEventListener("mouseout", () => {
+          hideTimeout = setTimeout(() => {
+            abtsctn.classList.add("hidden");
+          }, 400);
+        });
+      }
 
-
-     
       abtBtn2.addEventListener("click",() => {
         mobileMenu.classList.add("hidden");
         abtsctn.classList.remove("hidden");
@@ -94,7 +92,7 @@ const carImages = [
         abtsctn.classList.add("hidden");
       });
 
-      abtsctn.addEventListener("click", () => {
+      abtBtn2.addEventListener("click", () => {
         menuBtn.classList.remove("hidden");
         closeBtn.classList.add("hidden");
       });
