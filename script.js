@@ -94,6 +94,15 @@ const carImages = [
           });}
       });
 
+      // MOBILE CLOSE PRODUCTS 
+      window.addEventListener("scroll", () => {
+        if (window.scrollY < 300) {
+          prodcls.classList.remove("hidden");
+        } else {
+          prodcls.classList.add("hidden");
+        }
+      });
+
       // About Us Section
       const abtBtn = document.getElementById("abtbtn");
       const abtBtn2 = document.getElementById("abt-btn");
