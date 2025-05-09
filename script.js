@@ -45,13 +45,49 @@ const carImages = [
         closeBtn.classList.add("hidden");
       });
 
+      const prodBtn = document.getElementById("prdbtn");
+      const prodBtn2 = document.getElementById("prdbtn2");
+      const prodsctn = document.getElementById("prdsctn");
+      const prodcls = document.getElementById("prd-cls");
+
+      // RUN ON DESKTOP & LAPTOP SCREENS
+      document.addEventListener("DOMContentLoaded", () => {
+        if (window.matchMedia("(min-width: 1024px)").matches) {
+          let showTimeout, hideTimeout;
+
+          prodBtn.addEventListener("mouseover", () => {
+            clearTimeout(hideTimeout);
+            showTimeout = setTimeout(() => {
+              prodsctn.classList.remove("hidden");
+            }, 400);
+          });
+
+          prodBtn.addEventListener("mouseout", () => {
+            clearTimeout(showTimeout);
+            hideTimeout = setTimeout(() => {
+              prodsctn.classList.add("hidden");
+            }, 400);
+          });
+
+          prodsctn.addEventListener("mouseover", () => {
+            clearTimeout(hideTimeout);
+          });
+
+          prodsctn.addEventListener("mouseout", () => {
+            hideTimeout = setTimeout(() => {
+              prodsctn.classList.add("hidden");
+            }, 400);
+          });
+        }
+      });
+
       // About Us Section
       const abtBtn = document.getElementById("abtbtn");
       const abtBtn2 = document.getElementById("abt-btn");
       const abtsctn = document.getElementById("Aboutus");
       const clsAbt = document.getElementById("abt-cls");
 
-        // Only run this on laptop/desktop screens
+        // RUN ON LAPTOP & DESKTOP SCREENS
         document.addEventListener("DOMContentLoaded", () =>{
           if (
             window.matchMedia("(min-width: 1024px)").matches
@@ -81,7 +117,7 @@ const carImages = [
                 abtsctn.classList.add("hidden");
               }, 400);
             });
-          } else {
+          } else { //MOBILE SCREENS
             abtBtn2.addEventListener("click",() => {
               mobileMenu.classList.add("hidden");
               abtsctn.classList.remove("hidden");
