@@ -46,7 +46,7 @@ const carImages = [
       });
 
       const prodBtn = document.getElementById("prdbtn");
-      const prodBtn2 = document.getElementById("prdbtn2");
+      const prodBtn2 = document.getElementById("pordbtn2");
       const prodsctn = document.getElementById("prdsctn");
       const prodcls = document.getElementById("prd-cls");
 
@@ -78,7 +78,20 @@ const carImages = [
               prodsctn.classList.add("hidden");
             }, 400);
           });
-        }
+        } else { //MOBILE SCREENS
+          prodBtn2.addEventListener("click",() => {
+            mobileMenu.classList.add("hidden");
+            prodsctn.classList.remove("hidden");
+          });
+          
+          prodcls.addEventListener("click",() => {
+            prodsctn.classList.add("hidden");
+          });
+    
+          prodBtn2.addEventListener("click", () => {
+            menuBtn.classList.remove("hidden");
+            closeBtn.classList.add("hidden");
+          });}
       });
 
       // About Us Section
